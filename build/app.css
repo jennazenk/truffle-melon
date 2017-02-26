@@ -4,5 +4,27 @@ body {
  margin-left: 25%;
  margin-right: 25%;
  margin-top: 10%;
- font-family: "Open Sans", sans-serif;
+ /*font-family: "Courier New", sans-serif;*/
+ font-family: "Courier New", Courier, monospace;
+ /*font-style: "Courier New";*/
+}
+
+div {
+font-weight: bold;
+}
+
+table {
+/*    font-family: arial, sans-serif;
+*/    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

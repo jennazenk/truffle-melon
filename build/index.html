@@ -1,17 +1,49 @@
 
 
 <html>
+
 <head>
-<link rel="stylesheet" href="app.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+<!--     <script type="text/javascript">
+    $(document).ready(function() {
 
-<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js"></script> -->
- <script type="text/javascript" src="app.js"></script>
+        $("div").css("border", "3px solid red"); 
+        $("#result").append("JENNA");
+
+    });
+    </script> -->
 </head>
+<Title>Melon Challenge</Title>
 
-<h1>Melon Challenge</h1>
+<h1>Welcome to the Junior Melon Exchange</h1>
 
+<h4>Your wallet address : </h4> <p id="useraddress"></p>
+<h4>Your account balance : </h4> <p id="userbalance"></p>
 
-<div id="result"></div>
+<table>
+  <tr>
+    <th>Order ID</th>
+    <th>Owner</th>
+    <th>Active ?</th>
+  </tr>
+  <tr>
+    <td id="order1id"> </td>
+    <td id="order1owner"></td>
+    <td id="order1active"></td>
+  </tr>
+  <tr>
+    <td id="order2id"> </td>
+    <td id="order2owner">###</td>
+    <td id="order2active">###</td>
+  </tr>
+  <tr>
+    <td id="order3id"> </td>
+    <td id="order3owner">###</td>
+    <td id="order3active">###</td>
+  </tr>
+  
+</table>
 
 </html>
