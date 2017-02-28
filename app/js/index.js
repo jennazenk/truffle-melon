@@ -1,23 +1,21 @@
 var exchangeContract;
 var lastOfferId;
+var secondLastOfferId;
 
 //user info
 setTimeout(function() {
     var userAddress = web3.eth.accounts[0];
     $("#useraddress").append(userAddress);
-    console.log("User address is ", userAddress);
-
     web3.eth.getBalance(userAddress, function(err, res) {
         if (!err) {
             $("#userbalance").append(res.toNumber() + " wei");
-            console.log("User balance is ", res.toNumber());
         } else {
             console.log(err);
         }
     })
 }, 1000);
 
-//order 1 
+//Two last offers  
 setTimeout(function() {
     Exchange.at("0x9646756721bf3eb9c46fdf8b19f59d9f6a29c614").then(function(instance) {
         exchangeContract = instance;
@@ -26,22 +24,39 @@ setTimeout(function() {
         return instance.getLastOfferId();
     }).then(function(lastOffer) {
         lastOfferId = lastOffer.c[0];
-        $("#order1id").append(lastOfferId);
+        $("#offer1id").append(lastOfferId);
         return lastOfferId
     }).then(function(lastOfferId) {
         return exchangeContract.getOwner(lastOfferId);
     }).then(function(owner) {
-        $("#order1owner").append(owner);
+        $("#offer1owner").append(owner);
     }).then(function() {
         return exchangeContract.isActive(lastOfferId);
     }).then(function(bool) {
-        if (bool === true) $("#order1active").append("Active");
+        if (bool === true) $("#offer1active").append("Active");
         else {
-            $("#order1active").append("Inactive")
+            $("#offer1active").append("Inactive")
+            return
+        }
+    }).then(function() {
+        secondLastOfferId = lastOfferId-1;
+        $("#offer2id").append(secondLastOfferId);
+        return secondLastOfferId ;
+    }).then(function(secondLastOfferId) {
+        return exchangeContract.getOwner(secondLastOfferId)
+    }).then(function(owner2) {
+        $("#offer2owner").append(owner2);
+        return exchangeContract.isActive(secondLastOfferId)
+    }).then(function(bool) {
+        if (bool === true) $("#offer2active").append("Active");
+        else {
+            $("#offer2active").append("Inactive")
+            return
         }
     })
 }, 1000);
 
+//order2 ---we can use the lastOfferId that we previously got
 
 //order2
 // setTimeout(function() {
