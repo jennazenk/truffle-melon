@@ -2,12 +2,14 @@
 
 Welcome to the Melon challenge exchange
 
-- git clone the repo
-- run  : npm install
+Commands to run on your terminal 
+
+- git clone https://github.com/jennazenk/truffle-melon and cd into truffle-melon
+- npm install
 - run testrpc on a separate tab of your terminal
-- run : truffle compile
-- run : truffle migrate
+- truffle compile
+- truffle migrate
 - truffle build
-- To start the application, run : truffle serve, and head to your local host on port 8080. 
+- To start the application, run truffle serve, and head to your local host on port 8080. 
 
 
