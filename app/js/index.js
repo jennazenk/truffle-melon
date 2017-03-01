@@ -66,30 +66,31 @@ setTimeout(function() {
         testContract = instance;
         return instance;
     }).then(function(instance) {
-        console.log('Instance of the contract', instance);
+        console.log('L69 Instance of the contract', instance);
         return instance.getLastOfferId();
     }).then(function(lastOffer) {
-        console.log("Last offer id returns : ", lastOffer.toNumber());
+        console.log("L72 Last offer id returns : ", lastOffer.toNumber());
         // lastId = lastOffer.c[0];
         lastId = lastOffer.toNumber();
         return lastId;
     }).then(function(){
         return testContract.allEvents();
     }).then(function(allEvents) {
-        console.log("All events ", allEvents);
+        console.log("L79 All events ", allEvents);
         return;
     }).then(function() {
         return testContract.getOffer(lastId);
     }).then(function(offer) {
-        console.log("Offer 555? ", offer);
+        console.log("L84 Offer 555? ", offer);
         offer555 = offer;
         return offer;
     }).then(function(){
         return Asset.at(offer555[1]) // bigNumber error here when use offer555[3] (for eth token)
     }).then(function(asset) {
+        console.log('L90 Contract Asset instantiated at offer555[1]', asset);
         return asset.getName();
     }).then(function(name) {
-        console.log(name);
+        console.log('L93 Name of the token offered : ', name);
     })
 }, 1000);
 
