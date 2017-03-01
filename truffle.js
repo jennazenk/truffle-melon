@@ -22,7 +22,7 @@ module.exports = {
    "app.css": [
      "css/main.css"
    ],
-   "images/": "images/"
+   // "images/": "images/"
  }),
  networks: {
   // ropsten: {

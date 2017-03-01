@@ -2,6 +2,9 @@ var exchangeContract;
 var lastOfferId;
 var secondLastOfferId;
 
+
+var testContract;
+
 //user info
 setTimeout(function() {
     var userAddress = web3.eth.accounts[0];
@@ -25,7 +28,7 @@ setTimeout(function() {
     }).then(function(lastOffer) {
         lastOfferId = lastOffer.c[0];
         $("#offer1id").append(lastOfferId);
-        return lastOfferId
+        return lastOfferId;
     }).then(function(lastOfferId) {
         return exchangeContract.getOwner(lastOfferId);
     }).then(function(owner) {
@@ -35,24 +38,58 @@ setTimeout(function() {
     }).then(function(bool) {
         if (bool === true) $("#offer1active").append("Active");
         else {
-            $("#offer1active").append("Inactive")
-            return
+            $("#offer1active").append("Inactive");
+            return;
         }
     }).then(function() {
         secondLastOfferId = lastOfferId-1;
         $("#offer2id").append(secondLastOfferId);
         return secondLastOfferId ;
     }).then(function(secondLastOfferId) {
-        return exchangeContract.getOwner(secondLastOfferId)
+        return exchangeContract.getOwner(secondLastOfferId);
     }).then(function(owner2) {
         $("#offer2owner").append(owner2);
-        return exchangeContract.isActive(secondLastOfferId)
+        return exchangeContract.isActive(secondLastOfferId);
     }).then(function(bool) {
         if (bool === true) $("#offer2active").append("Active");
         else {
-            $("#offer2active").append("Inactive")
+            $("#offer2active").append("Inactive");
             return
         }
+    })
+}, 1000);
+
+var offer555;
+//Exploring functions
+setTimeout(function() {
+    Exchange.at("0x9646756721bf3eb9c46fdf8b19f59d9f6a29c614").then(function(instance) {
+        testContract = instance;
+        return instance;
+    }).then(function(instance) {
+        console.log('Instance of the contract', instance);
+        return instance.getLastOfferId();
+    }).then(function(lastOffer) {
+        console.log("Last offer id returns : ", lastOffer.toNumber());
+        // lastId = lastOffer.c[0];
+        lastId = lastOffer.toNumber();
+        return lastId;
+    }).then(function(){
+        return testContract.allEvents();
+    }).then(function(allEvents) {
+        console.log("All events ", allEvents);
+        return;
+    }).then(function() {
+        return testContract.getOffer(lastId);
+    }).then(function(offer) {
+        console.log("Offer 555? ", offer);
+        offer555 = offer;
+        return offer;
+    }).then(function(){
+        return Asset.at(offer555[1]) // bigNumber error here when use offer555[3] (for eth token)
+    }).then(function(asset) {
+        return asset.getName();
+    }).then(function(name) {
+        console.log(name);
     })
 }, 1000);
 
