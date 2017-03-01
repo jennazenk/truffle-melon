@@ -88,7 +88,7 @@ setTimeout(function() {
         return Asset.at(offer555[1]) // bigNumber error here when use offer555[3] (for eth token)
     }).then(function(asset) {
         console.log('L90 Contract Asset instantiated at offer555[1]', asset);
-        return asset.getName();
+        return asset.name();
     }).then(function(name) {
         console.log('L93 Name of the token offered : ', name);
     })
