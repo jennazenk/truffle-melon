@@ -5,38 +5,61 @@
 <head>
     <link rel="stylesheet" href="app.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
     <script type="text/javascript" src="app.js"></script>
 </head>
-
 <Title>Melon Challenge</Title>
-
 <h1>Welcome to the Melon challenge exchange</h1>
+<h4>Your wallet address : </h4>
+<p id="useraddress"></p>
+<h4>Your account balance : </h4>
+<p id="userbalance"></p>
 
-<h4>Your wallet address : </h4> <p id="useraddress"></p>
-<h4>Your account balance : </h4> <p id="userbalance"></p>
-
+<h5>Place an order</h5>
+<button type="button" class="btn btn-outline-secondary">Buy</button>
+<button type="button" class="btn btn-outline-secondary">Sell</button>
+<h3>Order book</h3>
 <table>
-  <tr>
-    <th>Order ID</th>
-    <th>Owner</th>
-    <th>Active ?</th>
-  </tr>
-  <tr>
-    <td id="offer1id"> </td>
-    <td id="offer1owner"></td>
-    <td id="offer1active"></td>
-  </tr>
-  <tr>
-    <td id="offer2id"></td>
-    <td id="offer2owner"></td>
-    <td id="offer2active"></td>
-  </tr>
-  <tr>
-    <td id="offer3id"> ###</td>
-    <td id="offer3owner">###</td>
-    <td id="offer3active">###</td>
-  </tr>
-  
+    <tr>
+        <th>Order ID</th>
+        <th>Owner</th>
+        <th>Active ?</th>
+        <th>Buy</th>
+        <th>Qty</th>
+        <th>Sell</th>
+        <th>Qty</th>
+    </tr>
+    <tr>
+        <td id="offer1id"> </td>
+        <td id="offer1owner"></td>
+        <td id="offer1active"></td>
+        <th id="offer1buy"></th>
+        <th id="offer1buyprice"></th>
+        <th id="offer1sell"></th>
+        <th id="offer1sellprice"></th>
+    </tr>
+    <tr>
+        <td id="offer2id"></td>
+        <td id="offer2owner"></td>
+        <td id="offer2active"></td>
+        <th id="offer2buy"></th>
+        <th id="offer2buyprice"></th>
+        <th id="offer2sell"></th>
+        <th id="offer2sellprice"></th>
+    </tr>
+    <tr>
+        <td id="offer3id"> ###</td>
+        <td id="offer3owner">###</td>
+        <td id="offer3active">###</td>
+        <th id="offer3buy">###</th>
+        <th id="offer3buyprice">###</th>
+        <th id="offer3sell">###</th>
+        <th id="offer3sellprice">###</th>
+    </tr>
 </table>
 
 </html>
