@@ -13,25 +13,63 @@
     <script type="text/javascript" src="app.js"></script>
 </head>
 <Title>Melon Challenge</Title>
+
+
 <h1>Welcome to the Melon challenge exchange</h1>
-<h4>Your wallet address : </h4>
+<br>
+<br>
+<br>
+<h3>Your wallet address : </h3>
 <p id="useraddress"></p>
-<h4>Your account balance : </h4>
+<h3>Your account balance : </h3>
 <p id="userbalance"></p>
 
-<h5>Place an order</h5>
-<button type="button" class="btn btn-outline-secondary">Buy</button>
-<button type="button" class="btn btn-outline-secondary">Sell</button>
+<br>
+<br>
+<br>
+
+<h3>Trade</h3>
+<div id="trade">
+BUY
+<form method="" action="">
+  <label for=""></label>
+  <input type="text" name="buyqty" id="buyqty" placeholder="Quantity to buy">
+</form>
+<select id="tokens">
+  <option>ETH</option>
+  <option>BTC</option>
+  <option >REP</option>
+  <option >EUR</option>
+</select>
+FOR
+<form method="" action="">
+  <label for=""></label>
+  <input type="text" name="sellqty" id="sellqty" placeholder="Quantity to sell">
+</form>
+<select id="tokens">
+  <option>ETH</option>
+  <option>BTC</option>
+  <option >REP</option>
+  <option >EUR</option>
+</select>
+
+<button type="button" class="btn btn-outline-secondary" onclick="tradeFunction()">Submit my offer</button>
+</div>
+
+<br>
+<br>
+<br>
+
 <h3>Order book</h3>
 <table>
     <tr>
-        <th>Order ID</th>
-        <th>Owner</th>
-        <th>Active ?</th>
-        <th>Buy</th>
-        <th>Qty</th>
-        <th>Sell</th>
-        <th>Qty</th>
+        <th class="table">Order ID</th>
+        <th class="table">Owner</th>
+        <th class="table">Active ?</th>
+        <th class="table">Buy</th>
+        <th class="table">Qty</th>
+        <th class="table">Sell</th>
+        <th class="table">Qty</th>
     </tr>
     <tr>
         <td id="offer1id"> </td>

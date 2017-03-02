@@ -15910,7 +15910,7 @@ setTimeout(function() {
         $("#offer1sell").append(name);
         $("#offer1sellprice").append(offer1[0]/(Math.pow(10, 8)));
     })
-}, 1000);
+}, 100);
 
 //Second last offer -- #554
 setTimeout(function() {
@@ -15959,7 +15959,11 @@ setTimeout(function() {
             return;
         }
     })
-}, 1000);
+}, 100);
+
+function tradeFunction() {
+    alert("Sorry, the magic stops here. The buy/sell functionnality hasn't been implemented (yet!). Please come back later.")
+}
 
 // var offer555;
 // //Exploring functions
