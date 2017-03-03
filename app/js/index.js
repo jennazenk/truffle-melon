@@ -11,7 +11,7 @@ setTimeout(function() {
     $("#useraddress").append(userAddress);
     web3.eth.getBalance(userAddress, function(err, res) {
         if (!err) {
-            $("#userbalance").append(res.toNumber() + " wei");
+            $("#userbalance").append(web3.fromWei(res, "ether").toNumber() + " ETH");
         } else {
             console.log(err);
         }
@@ -43,19 +43,18 @@ setTimeout(function() {
         return exchangeContract.getOffer(lastOfferId);
     }).then(function(offer) {
         offer1 = offer;
-        console.log(offer1);
         return Asset.at(offer1[3])
     }).then(function(asset) {
         return asset.name();
     }).then(function(name) {
         $("#offer1buy").append(name);
-        $("#offer1buyprice").append(offer1[2]/(Math.pow(10, 18)));
+        $("#offer1buyprice").append(offer1[2]/(Math.pow(10, 18)));  //TODO get decimals directly from contract w .getDecimals()
         return Asset.at(offer1[1])
     }).then(function(asset) {
         return asset.name();
     }).then(function(name) {
         $("#offer1sell").append(name);
-        $("#offer1sellprice").append(offer1[0]/(Math.pow(10, 8)));
+        $("#offer1sellprice").append(offer1[0]/(Math.pow(10, 8))); //TODO get decimals directly from contract w .getDecimals()
     })
 }, 100);
 
@@ -109,7 +108,7 @@ setTimeout(function() {
 }, 100);
 
 function tradeFunction() {
-    alert("Sorry, the magic stops here. The buy/sell functionnality hasn't been implemented (yet!). Please come back later.")
+    alert("Sorry, the magic stops here. The buy/sell functionnality is not available (yet!). Please come back later.")
 }
 
 // var offer555;
