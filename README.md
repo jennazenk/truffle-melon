@@ -9,7 +9,6 @@ Commands to run on your terminal
 - npm install truffle-default-builder
 - run testrpc on a separate tab of your terminal
 - truffle compile
-- truffle migrate
 - truffle build
 - To start the application, run truffle serve, and head to your local host on port 8080. 
 
