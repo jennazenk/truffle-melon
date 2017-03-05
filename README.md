@@ -4,6 +4,8 @@ Welcome to the Melon challenge exchange
 
 Commands to run on your terminal 
 
+** Make sure you have metamask installed in your browser. **
+
 - git clone https://github.com/jennazenk/truffle-melon and cd into truffle-melon
 - npm install truffle
 - npm install truffle-default-builder
