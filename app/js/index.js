@@ -48,13 +48,13 @@ setTimeout(function() {
         return asset.name();
     }).then(function(name) {
         $("#offer1buy").append(name);
-        $("#offer1buyprice").append(offer1[2]/(Math.pow(10, 18)));  //TODO get decimals directly from contract w .getDecimals()
+        $("#offer1buyprice").append(offer1[2]/(Math.pow(10, 18)));  //TODO get decimals directly from contract
         return Asset.at(offer1[1])
     }).then(function(asset) {
         return asset.name();
     }).then(function(name) {
         $("#offer1sell").append(name);
-        $("#offer1sellprice").append(offer1[0]/(Math.pow(10, 8))); //TODO get decimals directly from contract w .getDecimals()
+        $("#offer1sellprice").append(offer1[0]/(Math.pow(10, 8))); //TODO get decimals directly from contract
     })
 }, 100);
 
@@ -88,21 +88,19 @@ setTimeout(function() {
             $("#offer2buyprice").append("N/A");
             $("#offer2sell").append("N/A");
             $("#offer2sellprice").append("N/A");
-            return;
         } else {
             Asset.at(offer2[3]).then(function(asset) {
                 return asset.name();
             }).then(function(name) {
                 $("#offer2buy").append(name);
-                $("#offer2buyprice").append(offer2[2].toNumber());
+                $("#offer2buyprice").append(offer2[2]/(Math.pow(10, 18)));
                 return Asset.at(offer2[1])
             }).then(function(asset) {
                 return asset.name();
             }).then(function(name) {
                 $("#offer2sell").append(name);
-                $("#offer2sellprice").append(offer2[1].toNumber());
+                $("#offer2sellprice").append(offer2[1]/(Math.pow(10, 18)));
             })
-            return;
         }
     })
 }, 100);
@@ -111,40 +109,5 @@ function tradeFunction() {
     alert("Sorry, the magic stops here. The buy/sell functionnality is not available (yet!). Please come back later.")
 }
 
-// var offer555;
-// //Exploring functions
-// setTimeout(function() {
-//     Exchange.at("0x9646756721bf3eb9c46fdf8b19f59d9f6a29c614").then(function(instance) {
-//         testContract = instance;
-//         return instance;
-//     }).then(function(instance) {
-//         console.log('L69 Instance of the contract', instance);
-//         return instance.getLastOfferId();
-//     }).then(function(lastOffer) {
-//         console.log("L72 Last offer id returns : ", lastOffer.toNumber());
-//         // lastId = lastOffer.c[0];
-//         lastId = lastOffer.toNumber();
-//         return lastId;
-//     }).then(function(){
-//         return testContract.allEvents();
-//     }).then(function(allEvents) {
-//         console.log("L79 All events ", allEvents);
-//         return;
-//     }).then(function() {
-//         return testContract.getOffer(lastId);
-//     }).then(function(offer) {
-//         console.log("L84 Offer 555? ", offer);
-//         offer555 = offer;
-//         return offer;
-//     }).then(function(){
-//         return Asset.at(offer555[1]) // bigNumber error here when use offer555[3] (for eth token)
-//     }).then(function(asset) {
-//         console.log('L90 Contract Asset instantiated at offer555[1]', asset);
-//         return asset.name();
-//     }).then(function(name) {
-//         console.log('L93 Name of the token offered : ', name);
-//     })
-// }, 1000);
 
-console.log("Welcome to Melon Challenge");
-console.log("Exchange protocole : ", Exchange);
+console.log("Welcome to the Melon Challenge");
