@@ -12,7 +12,7 @@ If you wish to consult the code of my Meteor+web3.js app, you may visit the foll
 (iii) Meteor+Truffle3 <br />
 With this new direction decided, I wanted to devise the most effective solution by integrating Truffle in a Meteor application. After exploring all the options available, I attempted to follow the following tutorials :<br />
 	- http://robmyers.org/2016/01/26/ethereum-truffle-meteor/<br />
-	- https://github.com/blockchain-hacklab/meteor-truffle
+	- https://github.com/blockchain-hacklab/meteor-truffle<br />
 Unfortunately, neither of those worked for me ; I think the reason for that is that I was using the recently released version of Truffle (3).
 Subsequently, I tried to implement my own Meteor app integrating Truffle. I set up a simple meteor app, and inside the imports folder, I had my Solidity contracts (compiled with Truffle3). Once imported into my Meteor app, I was using the npm library 'truffle-contract' to manipulate the contracts. When I tried to instantiate the first contract at the provided address, I was getting an odd error ; I then ran into a multiple hours conundrum to figure out what was wrong. I believe that the node module truffle-contract was attempting -in vain- to perform a function on the provider I had set for the contract (web3 metamask). For some mysterious reason, truffle-contract would read this.provider as undefined and thus could not perform the said function and would prevent my promise from resolving.
 I was really eager to find a fix to issue but after multiple hours trying to solve it, I decided that I should first focus on devising a working solution that I could deliver on time, and later on I could dedicate some time to find a solution to this. 
