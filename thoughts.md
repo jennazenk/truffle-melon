@@ -7,7 +7,7 @@ This challenge was my very first opportunity to build a web app that interacts w
 
 <h3>(ii) Meteor+web3.js </h3><br>
 Building a Meteor version of this app allowed me to both learn some fundamentals about Meteor and web3.js, two technologies I had never used in the past. Once I figured out the way Meteor worked, and got a good grasp on how to use web3 to get the data I needed, I began implementing the order book using those 2 technologies. I quickly considered switching to Truffle. The reason for that is that I usually don't work off of callbacks, I much prefer using promises. 
-If you wish to consult the code of my Meteor+web3.js app, you may visit the following repo on github : https://github.com/jennazenk/meteor-melon
+If you wish to consult the code of my Meteor+web3.js app, you may visit the following repo on github : https://github.com/jennazenk/meteor-melon.
 
 <h3>(iii) Meteor+Truffle3</h3> <br>
 With this new direction decided, I wanted to devise the most effective solution by integrating Truffle in a Meteor application. After exploring all the options available, I attempted to follow the following tutorials :<br>
@@ -23,7 +23,7 @@ I finally decided to deliver an app entirely built with Truffle. This allowed me
 <h3>(v) Thoughts for improvement</h3> <br>
 I wish to pursue this project, and the following are the main improvements I want to perform on it:<br>
 	- Get the contract instanciation at the provided address to work with truffle-contract, so that I can use my Meteor+Truffle implementation.<br>
-	- Pursue the implementation of the trade functionnality (makeOffer function)<br>
+	- Pursue the implementation of the trade functionnality (makeOffer function).<br>
 	- Improve the UX/design, maybe use something like LESS. <br>
 
 Please let me know if you have any questions, I would be more than happy to discuss my approach and the challenges I encountered! Thank you again for sending over such an interesting exercise! 
