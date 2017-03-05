@@ -15901,13 +15901,15 @@ setTimeout(function() {
         return asset.name();
     }).then(function(name) {
         $("#offer1buy").append(name);
-        $("#offer1buyprice").append(offer1[2]/(Math.pow(10, 18)));  //TODO get decimals directly from contract
+        $("#offer1buyprice").append(offer1[2] / (Math.pow(10, 18))); //TODO get decimals directly from contract
         return Asset.at(offer1[1])
     }).then(function(asset) {
         return asset.name();
     }).then(function(name) {
         $("#offer1sell").append(name);
-        $("#offer1sellprice").append(offer1[0]/(Math.pow(10, 8))); //TODO get decimals directly from contract
+        $("#offer1sellprice").append(offer1[0] / (Math.pow(10, 8))); //TODO get decimals directly from contract
+    }).catch(function(e) {
+        console.log(e);
     })
 }, 100);
 
@@ -15946,15 +15948,19 @@ setTimeout(function() {
                 return asset.name();
             }).then(function(name) {
                 $("#offer2buy").append(name);
-                $("#offer2buyprice").append(offer2[2]/(Math.pow(10, 18)));
+                $("#offer2buyprice").append(offer2[2] / (Math.pow(10, 18)));
                 return Asset.at(offer2[1])
             }).then(function(asset) {
                 return asset.name();
             }).then(function(name) {
                 $("#offer2sell").append(name);
-                $("#offer2sellprice").append(offer2[1]/(Math.pow(10, 18)));
+                $("#offer2sellprice").append(offer2[1] / (Math.pow(10, 18)));
+            }).catch(function(e) {
+                console.log(e);
             })
         }
+    }).catch(function(e) {
+        console.log(e);
     })
 }, 100);
 
@@ -15966,25 +15972,36 @@ function makeOffer() {
     var sellqty = $("#sellqty").val();
     var buyToken, sellToken
     switch (buy) {
-    case "Ether Token" :
-        buyToken = "0xb5f354c280fe7e559237ea7b3b56ae220ef0b801";
-        break;
-    case "Bitcoin Token":
-        buyToken = "0xc652820b99552127d1e06373d8640e0f93da9477";
-        break;
+        case "Ether Token":
+            buyToken = "0xb5f354c280fe7e559237ea7b3b56ae220ef0b801";
+            break;
+        case "Bitcoin Token":
+            buyToken = "0xc652820b99552127d1e06373d8640e0f93da9477";
+            break;
     }
 
-        switch (sell) {
-    case "Ether Token" :
-        sellToken = "0xb5f354c280fe7e559237ea7b3b56ae220ef0b801";
-        break;
-    case "Bitcoin Token":
-        sellToken = "0xc652820b99552127d1e06373d8640e0f93da9477";
-        break;
+    switch (sell) {
+        case "Ether Token":
+            sellToken = "0xb5f354c280fe7e559237ea7b3b56ae220ef0b801";
+            break;
+        case "Bitcoin Token":
+            sellToken = "0xc652820b99552127d1e06373d8640e0f93da9477";
+            break;
     }
+
+    // Exchange.at("0x9646756721bf3eb9c46fdf8b19f59d9f6a29c614").then(function(instance) {
+    //     exchangeContract = instance;
+    //     return instance;
+    // }).then(function(instance) {
+    //     return instance.offer(sellqty, sellToken, buyqty, buyToken);
+    // }).then(function(res) {
+    //     console.log(res);
+    // }).catch(function(e) {
+    //     console.log(e);
+    // })
 
     console.log("Offer originator wants to buy ", buyToken, " and wants to sell ", sellToken);
-    alert("Sorry, the magic stops here. The buy/sell functionnality is not available (yet!). Please come back later.")
+    alert("Sorry, the magic stops here. The buy/sell functionnality is under construction. Please come back later.")
 
 }
 
