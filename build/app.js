@@ -15958,9 +15958,34 @@ setTimeout(function() {
     })
 }, 100);
 
-function tradeFunction() {
-    alert("Sorry, the magic stops here. The buy/sell functionnality is not available (yet!). Please come back later.")
-}
 
+function makeOffer() {
+    var buy = $("#buytokens").val();
+    var buyqty = $("#buyqty").val();
+    var sell = $("#selltokens").val();
+    var sellqty = $("#sellqty").val();
+    var buyToken, sellToken
+    switch (buy) {
+    case "Ether Token" :
+        buyToken = "0xb5f354c280fe7e559237ea7b3b56ae220ef0b801";
+        break;
+    case "Bitcoin Token":
+        buyToken = "0xc652820b99552127d1e06373d8640e0f93da9477";
+        break;
+    }
+
+        switch (sell) {
+    case "Ether Token" :
+        sellToken = "0xb5f354c280fe7e559237ea7b3b56ae220ef0b801";
+        break;
+    case "Bitcoin Token":
+        sellToken = "0xc652820b99552127d1e06373d8640e0f93da9477";
+        break;
+    }
+
+    console.log("Offer originator wants to buy ", buyToken, " and wants to sell ", sellToken);
+    alert("Sorry, the magic stops here. The buy/sell functionnality is not available (yet!). Please come back later.")
+
+}
 
 console.log("Welcome to the Melon Challenge");

@@ -23,27 +23,27 @@
 BUY
 <form method="" action="">
   <label for=""></label>
-  <input type="text" name="buyqty" id="buyqty" placeholder="Quantity to buy">
+  <input type="number" name="buyqty" id="buyqty" placeholder="Quantity to buy">
 </form>
-<select id="tokens">
-  <option>ETH</option>
-  <option>BTC</option>
-  <option >REP</option>
-  <option >EUR</option>
+<select id="buytokens">
+  <option>Ether Token</option>
+  <option>Bitcoin Token</option>
+  <option >Euro Token</option>
+  <option >Rep Token</option>
 </select>
 FOR
 <form method="" action="">
   <label for=""></label>
-  <input type="text" name="sellqty" id="sellqty" placeholder="Quantity to sell">
+  <input type="number" name="sellqty" id="sellqty" placeholder="Quantity to sell">
 </form>
-<select id="tokens">
-  <option>ETH</option>
-  <option>BTC</option>
-  <option >REP</option>
-  <option >EUR</option>
+<select id="selltokens">
+  <option>Ether Token</option>
+  <option>Bitcoin Token</option>
+  <option >Euro Token</option>
+  <option >Rep Token</option>
 </select>
 
-<button type="button" class="btn btn-outline-secondary" onclick="tradeFunction()">Submit my offer</button>
+<button type="button" class="btn btn-outline-secondary" onclick="makeOffer()">Submit my offer</button>
 </div>
 
 <br>
